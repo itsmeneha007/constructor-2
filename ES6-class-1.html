@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    class IPhone4{
+        constructor (ASIN,color,display,camera,bluetooth){
+            this.ASIN = ASIN;
+            this.color= color;
+            this.display = display;
+            this.camera = camera;
+
+            this.blurtooth = bluetooth;
+
+        }
+        dial(){
+            return"tring..tring..";
+        }
+
+        sendMessage(){
+            return"Sending message";
+        }
+        cameraClick(){
+            return"Camera clicked"
+        }
+        connectBluetooth(){
+            return"Bluetooth connected successfully"
+        }
+    }
+    let p4 = new IPhone4("12sb3h1","red","5 inch","12MP","connect")
+    console.log(p4);
+    console.log(p4.dial());
+    console.log(p4.sendMessage());
+    console.log(p4.cameraClick());
+    console.log(p4.connectBluetooth());
+
+</script>
