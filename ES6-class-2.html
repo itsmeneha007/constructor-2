@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    //Factory function
+    function animal(noOfLegs, vegetarian) {
+  return {
+    noOfLegs: noOfLegs,
+    vegetarian: vegetarian,
+    eat: function() {
+      return "eating...";
+    },
+    greet: function() {
+      return `Hi, I have ${this.noOfLegs} legs.`;
+    }
+  };
+}
+
+let a1 = animal(4, true);
+console.log(a1);
+
+
+let eatMessage = a1.eat.call({ noOfLegs: 2 });
+console.log(eatMessage); 
+
+let greetMessage = a1.greet.call({ noOfLegs: 2 });
+console.log(greetMessage);
+
+
+eatMessage = a1.eat.apply({ noOfLegs: 4 });
+console.log(eatMessage); 
+
+greetMessage = a1.greet.apply({ noOfLegs: 4 });
+console.log(greetMessage); 
+
+
+
+//Constructor function
+
+function AnimalCF(noOfLegs, vegetarian) {
+  this.noOfLegs = noOfLegs;
+  this.vegetarian = vegetarian;
+}
+
+AnimalCF.prototype.eat = function() {
+  return "eating...";
+};
+
+AnimalCF.prototype.greet = function() {
+  return `Hi, I have ${this.noOfLegs} legs.`;
+};
+
+let animalCF = new AnimalCF(4, true);
+console.log(animalCF);
+
+
+let eatMessageCF = animalCF.eat.call({ noOfLegs: 2 });
+console.log(eatMessageCF); 
+
+let greetMessageCF = animalCF.greet.call({ noOfLegs: 2 });
+console.log(greetMessageCF); 
+
+
+eatMessageCF = animalCF.eat.apply({ noOfLegs: 4 });
+console.log(eatMessageCF); 
+
+greetMessageCF = animalCF.greet.apply({ noOfLegs: 4 });
+console.log(greetMessageCF); 
+
+
+
+
+
+//ES6 class
+
+class AnimalES6 {
+  constructor(noOfLegs, vegetarian) {
+    this.noOfLegs = noOfLegs;
+    this.vegetarian = vegetarian;
+  }
+
+  eat() {
+    return "eating...";
+  }
+
+  greet() {
+    return `Hi, I have ${this.noOfLegs} legs.`;
+  }
+}
+
+let animalES6 = new AnimalES6(4, true);
+console.log(animalES6);
+
+
+let eatMessageES6 = animalES6.eat.call({ noOfLegs: 2 });
+console.log(eatMessageES6); 
+
+let greetMessageES6 = animalES6.greet.call({ noOfLegs: 2 });
+console.log(greetMessageES6); 
+
+
+eatMessageES6 = animalES6.eat.apply({ noOfLegs: 4 });
+console.log(eatMessageES6); 
+
+greetMessageES6 = animalES6.greet.apply({ noOfLegs: 4 });
+console.log(greetMessageES6); 
+   
+    
+       
+
+</script>
